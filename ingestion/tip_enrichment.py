@@ -4,6 +4,10 @@ import hmac
 import urllib.request
 import urllib.parse
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 SILOBREAKER_API_URL = "https://api.silobreaker.com/v2"
 
@@ -61,8 +65,8 @@ def extract_ioc_context(ioc_value, api_key, shared_key):
 
 if __name__ == "__main__":
     # Execution Test. Replace 'None' with os.getenv() calls in production.
-    TEST_API_KEY = "c70tj2cfo7oatj6ox0li"
-    TEST_SHARED_KEY = "thwvr5huc2eb2p3bln0h"
+    TEST_API_KEY = os.getenv("SILOBREAKER_API_KEY")
+    TEST_SHARED_KEY = os.getenv("SILOBREAKER_SHARED_KEY")
     TEST_IOC = "LockBit" 
     
     # Test execution flow (will return HTTP 401 Unauthorized without valid keys)
