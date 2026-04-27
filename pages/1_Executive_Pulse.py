@@ -38,7 +38,7 @@ with col_chart:
     st.subheader("Fraud Category Distribution")
     fig = px.pie(df, names='fraud_category', values='financial_impact', hole=0.4, 
                  title="Impact by Fraud Category")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
 
 with col_data:
     st.subheader("Actionable Intelligence")

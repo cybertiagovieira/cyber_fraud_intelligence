@@ -40,7 +40,7 @@ fig_commoditization = px.scatter(
     title="Window of Maximum Risk Identification"
 )
 fig_commoditization.update_traces(marker=dict(size=12))
-st.plotly_chart(fig_commoditization, use_container_width=True)
+st.plotly_chart(fig_commoditization, width="stretch")
 
 # 2. Sector Targeting Shift
 st.subheader("Sector Targeting Distribution")
