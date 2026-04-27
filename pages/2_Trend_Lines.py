@@ -24,7 +24,6 @@ if df.empty:
     st.warning("Insufficient telemetry for trend generation.")
     st.stop()
 
-# 1. Commoditization Clock
 st.subheader("TTP Commoditization Timeline")
 fig_commoditization = px.scatter(
     df, 
@@ -42,7 +41,6 @@ fig_commoditization = px.scatter(
 fig_commoditization.update_traces(marker=dict(size=12))
 st.plotly_chart(fig_commoditization, width="stretch")
 
-# 2. Sector Targeting Shift
 st.subheader("Sector Targeting Distribution")
 sector_counts = df.groupby(['victim_sector', 'fraud_category']).size().reset_index(name='count')
 fig_sectors = px.bar(
@@ -52,9 +50,8 @@ fig_sectors = px.bar(
     color="fraud_category",
     title="Targeted Client Sectors"
 )
-st.plotly_chart(fig_sectors, use_container_width=True)
+st.plotly_chart(fig_sectors, width="stretch")
 
-# 3. Confidence Baseline
 st.subheader("Intelligence Source Confidence")
 fig_confidence = px.histogram(
     df, 
@@ -63,4 +60,4 @@ fig_confidence = px.histogram(
     category_orders={"confidence_overall": ["Low", "Medium", "High"]},
     title="Telemetry Reliability Distribution"
 )
-st.plotly_chart(fig_confidence, use_container_width=True)
+st.plotly_chart(fig_confidence, width="stretch")

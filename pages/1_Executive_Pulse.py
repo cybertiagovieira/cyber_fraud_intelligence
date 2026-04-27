@@ -22,7 +22,6 @@ if df.empty:
     st.warning("No telemetry available in database.")
     st.stop()
 
-# Metric KPI Row
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total Events (30d)", len(df))
 col2.metric("Primary Vector", df['attack_vector'].mode()[0])
@@ -31,7 +30,6 @@ col4.metric("Estimated Impact", f"€{df['financial_impact'].sum():,.2f}")
 
 st.markdown("---")
 
-# Visualization Row
 col_chart, col_data = st.columns([2, 1])
 
 with col_chart:
