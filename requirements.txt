@@ -1,0 +1,9 @@
+undetected-chromedriver
+beautifulsoup4
+argostranslate
+streamlit
+pandas
+plotly
+SQLAlchemy
+requests
+schedule
